@@ -3,6 +3,8 @@ import "./styles.css";
 import Me from "../../assets/profilepic.png";
 
 const Intro = () => {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   return (
     <div className="i">
       <div className="i-left">
@@ -20,9 +22,7 @@ const Intro = () => {
           </div>
           <p className="i-desc">
             I design and develop services for customers of all sizes,
-            specializing in creating stylish, modern websites, web services and
-            online stores.
-            <br />
+            specializing in creating stylish, modern websites.
           </p>
         </div>
         <svg
@@ -30,9 +30,9 @@ const Intro = () => {
           height="75"
           viewBox="0 0 75 75"
           fill="none"
-          stroke="black"
           className="i-scroll"
           xmlns="http://www.w3.org/2000/svg"
+          stroke={darkMode ? "#222" : "white"}
         >
           <g id="scroll">
             <path
